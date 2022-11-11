@@ -75,6 +75,10 @@ export const genres= {
         {
             "id": 37,
             "name": "Western"
+        },
+        {
+            "id": 420,
+            "name": "Cringe"
         }
     ]
 };
