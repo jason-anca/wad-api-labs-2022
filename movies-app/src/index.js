@@ -21,6 +21,7 @@ import FavouriteTVPage from "./pages/favouriteShowsPage"
 import AddTVReviewPage from './pages/addTVReviewPage'
 import TVReviewPage from "./pages/tvReviewsPage";
 import LoginPage from "./pages/loginPage";
+import SignupPage from "./pages/signupPage";
 import AuthContextProvider from "./contexts/authContext";
 
 const queryClient = new QueryClient({
@@ -57,6 +58,7 @@ const App = () => {
                 <Route path="/movies/toprated" element={<TopRatedMoviesPage />} />
                 <Route path="/tv/:id" element={<TVPage />} />
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignupPage />} />
               </Routes>
             </AuthContextProvider>
           </TVContextProvider>
