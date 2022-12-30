@@ -1,3 +1,3 @@
-# Web App Dev 2: Web API Labs
+# Web App Dev 2: Web API Assignment
 
-Practical labs for the WAD2 module, BSc. Applied/Software Systems Dev/Forensics  
+Web App Dev Assigment 2
