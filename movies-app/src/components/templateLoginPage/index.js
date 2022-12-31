@@ -25,12 +25,12 @@ const TemplateLoginPage = props => {
 
   return (
     <>
-      <Box component ="div" pt={10} sx={{ justifyContent:'center', display: 'flex' }}>
+      <Box component ="div" pt={15} sx={{ justifyContent:'center', display: 'flex' }}>
           <Typography component="h2" variant="h3">
             Log into TMDB
           </Typography>
         </Box>
-        <Box component ="div" pt={5} sx={{ justifyContent:'center', display: 'flex'}}>
+        <Box component ="div" pt={7} sx={{ justifyContent:'center', display: 'flex'}}>
           <TextField
            id="username"
             label="Username"
