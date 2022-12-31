@@ -13,7 +13,6 @@ const TemplateSignupPage = props => {
 
   const register = () => {
     context.register(username, password)
-    console.log("test")
     // return <Navigate to={"/login"} />;
     return <Navigate to={"/"} />;
   }

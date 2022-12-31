@@ -18,13 +18,12 @@ const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 const SiteHeader = ({ history }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+  const context = useContext(AuthContext);
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const navigate = useNavigate();
-
-  const authContext = useContext(AuthContext)
 
   const menuOptions = [
     { label: "Home", path: "/" },
@@ -53,9 +52,13 @@ const SiteHeader = ({ history }) => {
           <Typography variant="h4" sx={{ flexGrow: 1 }}>
             TMDB Client
           </Typography>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            All you ever wanted to know about Movies and TV Shows!
-          </Typography>
+          { context.isAuthenticated ? (
+            <Typography variant="h6" sx={{ flexGrow: 1 }}>
+            Welcome, {context.userName}!
+            </Typography>
+          ):(<Typography variant="h6" sx={{ flexGrow: 1 }}>
+          All you ever wanted to know about Movies and TV Shows!
+            </Typography>) }
           {isMobile ? (
             <>
               <IconButton
