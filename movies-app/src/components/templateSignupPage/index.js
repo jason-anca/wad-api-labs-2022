@@ -10,12 +10,17 @@ const TemplateSignupPage = props => {
   const context = useContext(AuthContext)
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [registered, setRegistered] = useState(false);
 
   const register = () => {
     context.register(username, password)
-    // return <Navigate to={"/login"} />;
-    return <Navigate to={"/"} />;
+    setRegistered(true)
   }
+
+  if(registered === true ){
+    return <Navigate to={"/login"} />;
+  }
+
   return (
     <>
       <Box component ="div" pt={10} sx={{ justifyContent:'center', display: 'flex' }}>
