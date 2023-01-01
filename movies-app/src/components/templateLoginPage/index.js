@@ -63,6 +63,11 @@ const TemplateLoginPage = props => {
             Log in
           </Button>
         </Box> 
+        <Box component ="div" pt={20} sx={{ justifyContent:'center', display: 'flex' }}>
+          <Typography component="h5" variant="h6" sx={{color: 'red'}}>
+            Not registered?
+          </Typography>
+        </Box>
         <Box component ="div" pt={1} sx={{ justifyContent:'center',display: 'flex'}}>
           <Button
           variant="contained"
@@ -72,7 +77,7 @@ const TemplateLoginPage = props => {
           >
             Sign Up
           </Button>
-        </Box> 
+        </Box>
     </>
   );
 };
