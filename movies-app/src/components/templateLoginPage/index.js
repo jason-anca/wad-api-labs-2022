@@ -10,6 +10,7 @@ const TemplateLoginPage = props => {
   const context = useContext(AuthContext)
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [unregistered, setUnregistered] = useState(false);
 
 
   const login = () => {
@@ -17,11 +18,15 @@ const TemplateLoginPage = props => {
   };
 
   const register = () => {
-   return <Navigate to={"/signup"} />;
+    setUnregistered(true)
   }
 
   if (context.isAuthenticated === true) {
     return <Navigate to={"/"} />;
+  }
+
+  if(unregistered === true){
+    return <Navigate to={"/signup"} />;
   }
 
   return (
