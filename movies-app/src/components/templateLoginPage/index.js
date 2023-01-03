@@ -10,18 +10,27 @@ const TemplateLoginPage = props => {
   const context = useContext(AuthContext)
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [unregistered, setUnregistered] = useState(false);
+
 
   const login = () => {
     context.authenticate(username, password);
   };
 
   const register = () => {
-   return <Navigate to={"/signup"} />;
+    setUnregistered(true)
   }
+
 
   if (context.isAuthenticated === true) {
     return <Navigate to={"/"} />;
   }
+
+  if(unregistered === true){
+    return <Navigate to={"/signup"} />;
+  }
+
+  
 
   return (
     <>
@@ -57,6 +66,11 @@ const TemplateLoginPage = props => {
             Log in
           </Button>
         </Box> 
+        <Box component ="div" pt={20} sx={{ justifyContent:'center', display: 'flex' }}>
+          <Typography component="h5" variant="h6" sx={{color: 'red'}}>
+            Not registered?
+          </Typography>
+        </Box>
         <Box component ="div" pt={1} sx={{ justifyContent:'center',display: 'flex'}}>
           <Button
           variant="contained"
@@ -66,7 +80,7 @@ const TemplateLoginPage = props => {
           >
             Sign Up
           </Button>
-        </Box> 
+        </Box>
     </>
   );
 };
