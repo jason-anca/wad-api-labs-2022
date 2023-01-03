@@ -21,6 +21,7 @@ const TemplateLoginPage = props => {
     setUnregistered(true)
   }
 
+
   if (context.isAuthenticated === true) {
     return <Navigate to={"/"} />;
   }
@@ -28,6 +29,8 @@ const TemplateLoginPage = props => {
   if(unregistered === true){
     return <Navigate to={"/signup"} />;
   }
+
+  
 
   return (
     <>
