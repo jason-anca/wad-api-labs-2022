@@ -11,6 +11,7 @@ const TemplateSignupPage = props => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [registered, setRegistered] = useState(false);
+  const [loggedOut, setLoggedOut] = useState(false);
 
   const register = () => {
     context.register(username, password)
@@ -20,6 +21,16 @@ const TemplateSignupPage = props => {
   if(registered === true ){
     return <Navigate to={"/login"} />;
   }
+
+  const logout = () => {
+    context.signout()
+    setLoggedOut(true)
+  };
+
+  if(loggedOut === true ){
+    return <Navigate to={"/"} />;
+  }
+
 
   return (
     <>
@@ -54,7 +65,17 @@ const TemplateSignupPage = props => {
           >
             Sign Up
           </Button>
-        </Box> 
+        </Box>
+        <Box component ="div" pt={1} sx={{ justifyContent:'center',display: 'flex', color:'orange'}}>
+          <Button
+          variant="contained"
+          color="primary"
+          sx = {{ backgroundColor: "orange" }}
+          onClick={logout}
+          >
+            Logout
+          </Button>
+        </Box>  
     </>
   );
 };
